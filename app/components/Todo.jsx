@@ -18,5 +18,7 @@ export default class Todo extends React.Component {
 }
 
 Todo.propTypes = {
-  onToggle: React.PropTypes.func
+  onToggle: React.PropTypes.func,
+  text: React.PropTypes.string,
+  completed: React.PropTypes.bool,
 };
