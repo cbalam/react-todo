@@ -1,7 +1,7 @@
 {
-  "name": "TimerApplication",
+  "name": "TodoApplication",
   "version": "1.0.0",
-  "description": "Simple react app",
+  "description": "Todo Application",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
@@ -32,6 +32,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.2.0",
+    "moment": "^2.17.1",
     "node-sass": "^3.13.0",
     "node-uuid": "^1.4.7",
     "react-addons-test-utils": "^15.4.1",
