@@ -46,8 +46,6 @@ export default class TodoApp extends React.Component {
   }
 
   render() {
-    let {todos, showCompleted, searchText} = this.state;
-    let filteredTodos = TodoApi.filterTodos(todos, showCompleted, searchText);
 
     return (
       <div>
