@@ -1,4 +1,5 @@
 import * as redux from "redux";
+import thunk from "redux-thunk";
 import {searchTextReducer, showCompletedReducer, todosReducer} from "reducers";
 
 export const configure = (initialState = {}) => {
@@ -8,5 +9,8 @@ export const configure = (initialState = {}) => {
      todos: todosReducer
    });
 
-  return redux.createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.compose;
+  return redux.createStore(reducer, initialState, composeEnhancers(
+    redux.applyMiddleware(thunk)
+  ));
 };
