@@ -24,7 +24,7 @@ export class Todo extends React.Component {
       return message + moment.unix(timestamp).format('MMM Do YYYY @ h:mm a');
     };
     return (
-      <div className={todoClassName} onClick={() => {dispatch(actions.toggleTodo(id))}}>
+      <div className={todoClassName} onClick={() => {dispatch(actions.startToggleTodo(id, !completed))}}>
         <input type="checkbox" checked={completed} onChange={()=>{}}/>
         <div>
           <p>{text}</p>
