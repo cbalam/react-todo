@@ -104,7 +104,7 @@ describe('Actions', () => {
         .catch(done);
     });
 
-      afterEach(() => {
+    afterEach(() => {
       testTodoRef.remove().then(() => done());
     });
 

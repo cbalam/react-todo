@@ -1,5 +1,10 @@
 export default {
   filterTodos: function(todos, showCompleted, searchText) {
+
+    if(todos.length === 0) {
+      return [];
+    }
+
     let filteredTodos = todos;
 
     //Filter by showCompleted
@@ -24,7 +29,6 @@ export default {
         return 0;
       }
     });
-
 
     return filteredTodos;
   }

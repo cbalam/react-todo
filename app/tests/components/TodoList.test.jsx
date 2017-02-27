@@ -9,6 +9,7 @@ import ConnectedTodoList, {TodoList} from "TodoList";
 import ConnectedTodo, {Todo} from "Todo";
 
 describe('TodoList', () => {
+
   it('should exist', () => {
     expect(TodoList).toExist();
   });
@@ -47,6 +48,6 @@ describe('TodoList', () => {
     let todoList = TestUtils.renderIntoDocument(<TodoList todos={todos}/>);
     let $el = $(ReactDOM.findDOMNode(todoList));
 
-    expect($el.find('.container__message').length).toBe(1)
+    expect($el.find('.container__message').length).toBe(1);
   });
 });
