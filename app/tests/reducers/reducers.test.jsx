@@ -91,4 +91,29 @@ describe('Reducers', () => {
       expect(res[0].text).toEqual(todos[0].text)
     });
   });
+
+  describe('authReducer', () => {
+    it('should store uid on auth object', () => {
+      let action = {
+        type: 'LOGIN',
+        uid: '123'
+      };
+
+      let res = reducers.authReducer(undefined, df(action));
+      expect(res.uid).toEqual(action.uid);
+    });
+
+    it('should logout', () => {
+
+      const auth = {
+        uid: '123'
+      };
+      let action = {
+        type: 'LOGOUT'
+      };
+
+      let res = reducers.authReducer(df([auth]), df(action));
+      expect(res).toEqual({});
+    });
+  });
 });

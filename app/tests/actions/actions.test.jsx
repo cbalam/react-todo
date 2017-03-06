@@ -32,7 +32,7 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
-  it('should create todo and dispatch ADD_TODO', (done) => {
+  it('Should create todo and dispatch ADD_TODO', (done) => {
     const store = createMockStore({});
     const todoText = 'My todo item';
 
@@ -58,7 +58,7 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
-  it('should generate add todos action object', () => {
+  it('Should generate add todos action object', () => {
     let todos = [{
       id: '111',
       text: 'anything',
@@ -108,7 +108,7 @@ describe('Actions', () => {
       testTodoRef.remove().then(() => done());
     });
 
-    it('should toggle todo and dispatch UPDATE_TODO action', (done) => {
+    it('Should toggle todo and dispatch UPDATE_TODO action', (done) => {
       const store = createMockStore({});
       const action = actions.startToggleTodo(testTodoRef.key, true);
       store.dispatch(action).then(() => {
@@ -126,7 +126,7 @@ describe('Actions', () => {
       }, done);
     });
 
-    it('should populate todos and dispatch ADD_TODOS', (done) => {
+    it('Should populate todos and dispatch ADD_TODOS', (done) => {
       const store = createMockStore({});
       const action = actions.startAddTodos();
       store.dispatch(action).then(() => {
@@ -138,5 +138,24 @@ describe('Actions', () => {
         done();
       }, done);
     });
+  });
+
+  it('Should generate login action object', () => {
+    const action = {
+      type: 'LOGIN',
+      uid: '123'
+    };
+
+    let res = actions.login(action.uid);
+    expect(res).toEqual(action);
+  });
+
+  it('Should generate logout action object', () => {
+    const action = {
+      type: 'LOGOUT'
+    };
+
+    let res = actions.logout();
+    expect(res).toEqual(action);
   });
 });

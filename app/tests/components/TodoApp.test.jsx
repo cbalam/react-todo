@@ -1,6 +1,5 @@
 import React from "react";
 import expect from "expect";
-import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import TestUtils from "react-addons-test-utils";
 import * as configureStore from "configureStore";
